@@ -19,12 +19,11 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
+#########
+# OTHER #
+#########
 *.pdf
-
 *.bak
-
 *.mwb
-
 .DS_Store
-
 .idea/
