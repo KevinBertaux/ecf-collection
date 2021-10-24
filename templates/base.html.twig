@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}ECF Collection{% endblock %}</title>
@@ -18,6 +18,9 @@
     {% endblock %}
 </head>
 <body>
+{% include "includes/_navbar.html.twig" %}
+<main class="main">
 {% block body %}{% endblock %}
+</main>
 </body>
 </html>
