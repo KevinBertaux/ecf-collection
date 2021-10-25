@@ -24,3 +24,6 @@
 #########
 .idea
 GestionCollections.pdf
+.DS_Store
+*.mwb
+*.bak
