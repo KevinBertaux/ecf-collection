@@ -18,3 +18,13 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+*.pdf
+
+*.bak
+
+*.mwb
+
+.DS_Store
+
+.idea/
