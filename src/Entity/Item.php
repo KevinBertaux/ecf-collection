@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ItemRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Item
      * @ORM\Column(type="text")
      */
     private $image;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Gathering::class, mappedBy="items")
+     */
+    private $gatherings;
+
+    public function __construct()
+    {
+        $this->gatherings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,33 @@ class Item
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Gathering[]
+     */
+    public function getGatherings(): Collection
+    {
+        return $this->gatherings;
+    }
+
+    public function addGathering(Gathering $gathering): self
+    {
+        if (!$this->gatherings->contains($gathering)) {
+            $this->gatherings[] = $gathering;
+            $gathering->addItem($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGathering(Gathering $gathering): self
+    {
+        if ($this->gatherings->removeElement($gathering)) {
+            $gathering->removeItem($this);
+        }
 
         return $this;
     }
