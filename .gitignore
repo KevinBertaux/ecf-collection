@@ -22,8 +22,6 @@
 #########
 # OTHER #
 #########
-*.pdf
-*.bak
-*.mwb
 .DS_Store
 .idea/
+res/
