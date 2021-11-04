@@ -22,5 +22,6 @@
 #########
 # OTHER #
 #########
-.idea
-GestionCollections.pdf
+.DS_Store
+.idea/
+res/
